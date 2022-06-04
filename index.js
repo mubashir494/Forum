@@ -6,6 +6,7 @@ import post from './route/post.js'
 import comment from './route/comment.js'
 import user from './route/user.js'
 import dotenv from 'dotenv'
+import path from 'path'
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,7 +26,6 @@ const PORT = process.env.PORT|| 5000
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'))
-    const path = require("path")
     app.get("*",(req,res) =>{
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
