@@ -89,7 +89,7 @@ const Post = (prop) => {
                             <p><small>Posted at : {prop.date}</small></p>
                         </div>
                     </div>
-                    <div className="col-sm-1" style={{ paddingTop: "60px" }}>
+                    <div className="col-sm-1 response" style={{ paddingTop: "20px",maxWidth:"50px"}}>
                         <div >
                             {(JSON.parse(localStorage.getItem('item'))) ?
                                 <><i onClick={postLike} className={`fa ${(Liked === true) ? "fa-thumbs-down" : "fa-thumbs-up"}`}></i>

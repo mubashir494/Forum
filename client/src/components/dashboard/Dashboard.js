@@ -27,15 +27,15 @@ const Dashboard = () => {
                 <h1>Dash Board</h1>
                 <hr />
                 <div className="row">
-                    <div className="col-3">
-                        <nav className="nav flex-column verticleMenu ">
+                    <div className="row">
+                        <nav className="nav">
                             <a className="nav-link" aria-current="page" href="/dashboard">Your posts</a>
-                            <a className="nav-link" aria-current="page" href="/dashboard/liked">Posts Liked By You</a>
+                            <a className="nav-link"  href="/dashboard/liked">Posts Liked By You</a>
                             <a className="nav-link" href="/dashboard/comment">Post You have commented</a>
                             <a className="nav-link" href="/dashboard/update">Update Personal Information</a>
                         </nav>
                     </div>
-                    <div className="col-9">
+                    <div className="row" style={{marginTop : "20px"}}>
                             <Routes>
                                 <Route exact path="" element={<Posts/>}/>
                                 <Route exact path="liked" element={<PostLiked/>}/>
