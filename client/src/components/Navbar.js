@@ -36,7 +36,10 @@ export default function Navbar() {
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">Forum</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon">
+                    {context.loggedIn === true ? <CreateBtn /> : <div></div>}
+                    {context.loggedIn === false ? <LoginButton /> : <a onClick={logout} className="btn btn-light">Logout</a>}
+                    </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
