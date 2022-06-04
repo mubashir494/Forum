@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/',getPost)
 router.get('/id',getPostById)
-router.post('/',createPost)
+router.post('/create',createPost)
 router.get('/getpost',getPostByUserId)
 router.get('/getPostbyUserId',getPostByCommentId)
 router.put('/dislike',dislikePost)
