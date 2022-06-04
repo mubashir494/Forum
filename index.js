@@ -7,7 +7,7 @@ import comment from './route/comment.js'
 import user from './route/user.js'
 import dotenv from 'dotenv'
 import path from 'path'
-
+import {fileURLToPath} from 'url'
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -25,7 +25,9 @@ const CONNECTION_URL =  process.env.MONGODB_URI || 'mongodb+srv://server:MbIWrHC
 const PORT = process.env.PORT|| 5000
 
 if(process.env.NODE_ENV === 'production'){
+    const __filename = fileURLToPath(import.meta.url);
     app.use(express.static('client/build'))
+    const __dirname = path.dirname(__filename);
     app.get("*",(req,res) =>{
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
