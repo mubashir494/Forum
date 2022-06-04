@@ -6,7 +6,7 @@ const URL = "https://forum-q.herokuapp.com"
 export const createPost = async (obj) => { return axios.post(`${URL}/post/create`, obj)};
 
 export const getPost = async () => {
-    return axios.get(`${URL}/post`).then(response => response.data);
+    return axios.get(`${URL}/post/get`).then(response => response.data);
 }
 export const getPostById = async (id) => {
     const url = `${URL}/post/id?id=${id}`
