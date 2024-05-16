@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const URL = "https://forum-q.herokuapp.com"
+const URL = process.env.REACT_APP_BACKEND_URL
 
 export const createPost = async (obj) => { return axios.post(`${URL}/post/create`, obj)};
 
